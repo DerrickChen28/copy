@@ -1,0 +1,73 @@
+#app {
+  font-family: Avenir, Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-align: center;
+  color: #2c3e50;
+  margin-top: 60px;
+}
+body,
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-size: 62.5%; 
+
+  }
+
+:root{
+  --dark-red:#dc2626;
+  --dark-blue:#135cc5;
+  --light-red:#f87171;
+  --light-blue:#2998ff;
+  --dark-purple:#c229ff;
+
+}
+.cold{
+  --primary: var(--dark-red);
+  --secondary: var(--dark-blue);
+
+}
+
+.warm{
+  --primary:var(--light-red);
+  --secondary:var(--light-blue);
+
+}
+body {
+  background-color: var(--dark-purple);
+
+}
+h1 {
+  align-items: center;
+
+}
+h2 {
+  text-align: center;
+}
+
+.card {
+  align-items: center;
+  margin: 4rem;
+  flex-basis: 25%;
+  width: 40%;
+  border-radius: 10px;
+  padding:1rem;
+  justify-content:space-around;
+  flex-direction:row;
+  flex-wrap: wrap;
+  height: 20px;
+
+}                                                                                                                                                                                                                                                                                                          
+                                                                    
+.btn{
+  font-size:1rem;
+  align-items: center;
+  justify-content: space-between;
+
+}
+img {
+  height:20rem;
+  max-width: 100%;
+  
+}
