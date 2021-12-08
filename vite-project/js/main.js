@@ -1,65 +1,93 @@
-import "../styles/styles.css";
+import "../styles/style.css"
 import { songs } from './card'
 
 const DOMSelectors = {
-    button: document.getElementById("btn"),
-    Hype : document.querySelector(".Hype"), 
-    Sad : document.querySelector(".Sad"), 
-    Random : document.querySelector(".Random"), 
+    button1: document.getElementById("btn hype"),
+    button2: document.getElementById("btn sad"),
+    button3: document.getElementById("btn random"),
+    Type: document.querySelector(".Type"), 
     Price : document.querySelector(".price"),
     card : document.querySelector(".card"),
     display : document.querySelector(".display-parent"),
-}
-DOMSelectors.display.insertAdjacentHTML("afterbegin", `<div class="display-parent>`);
-DOMSelectors.Hype.addEventListener("click", function () {
-    const HypeSong = songs.filter(song => {
-        if (song.Hype === true) {
-            return song;
-            };
-    });
+};
+
+DOMSelectors.Type.addEventListener("click", function () {
+    if (DOMSelectors.Type.classList.contains("Hype")) {
+      let music = document.querySelectorAll(".card");
+      music.forEach((song) => song.remove());
+      items.forEach((music) =>
+        DOMSelectors.display.insertAdjacentHTML(
+          "afterbegin",
+          <div class = 'card '>
+        <img class = 'image' src="${song.image}" alt=""></img>
+        <h2 class = 'name'>${songs.name}</h2>
+        <h3 class = 'price'>${songs.price}</h3>
+        <h3 class = 'Type'>${songs.Type}</h3>
         
-    });
-;
-DOMSelectors.display.insertAdjacentHTML("afterbegin", `<div class="display-parent>`);
-DOMSelectors.Sad.addEventListener("click" , function () {
-    const SadSong = songs.filter(song => {
-        if (song.Sad === true) {
-            return song;
-            };
-    });
-});
+        </div>
+)
+);
+DOMSelectors.Type.addEventListener("click", function () {
+    if (DOMSelectors.Type.classList.contains("Sad")) {
+      let music = document.querySelectorAll(".card");
+      music.forEach((song) => song.remove());
+      items.forEach((music) =>
+        DOMSelectors.display.insertAdjacentHTML(
+          "afterbegin",
+          <div class = 'card '>
+        <img class = 'image' src="${song.image}" alt=""></img>
+        <h2 class = 'name'>${songs.name}</h2>
+        <h3 class = 'price'>${songs.price}</h3>
+        <h3 class = 'Type'>${songs.Type}</h3>
+        
+        </div>
+)
+);
+DOMSelectors.Type.addEventListener("click", function () {
+    if (DOMSelectors.Type.classList.contains("Random")) {
+      let music = document.querySelectorAll(".card");
+      music.forEach((song) => song.remove());
+      items.forEach((music) =>
+        DOMSelectors.display.insertAdjacentHTML(
+          "afterbegin",
+          <div class = 'card '>
+        <img class = 'image' src="${song.image}" alt=""></img>
+        <h2 class = 'name'>${songs.name}</h2>
+        <h3 class = 'price'>${songs.price}</h3>
+        <h3 class = 'Type'>${songs.Type}</h3>
+        
+        </div>
+)
+);    
+
 DOMSelectors.display.insertAdjacentHTML("afterbegin", `<div class="display-parent">`);
-DOMSelectors.Random.addEventListener("click" , function () {
-    const RandomSong = songs.filter(song => {
-        if (song.Random === true) {
-            return song;
-            };
-        });
+document.getElementById("card").addEventListener("click" , function () {
+    songs.sort((a, b) => {
+        return a.price - b.price;
     });
-        
-
-
-function create(list) {
-  list.forEach((song) =>
-    DOMSelectors.display.insertAdjacentHTML(
-      "afterbegin",
-      `<div class = 'card '>
-      <img class = 'picture' src="${song.image}" alt="">
-      <h2 class = 'name'>${song.name}</h2>
-      <h3 class = 'color'>${song.price}</h3>
-
+    songs.forEach((e) => {
+        console.log(`${e.name} ${e.price}`) 
+    });
+        });
+    ;
+    function create(list) {
+    list.forEach((song) =>
+      DOMSelectors.display.insertAdjacentHTML(
+        "afterbegin",
+        `<div class = 'card '>
+        <img class = 'picture' src="${song.image}" alt="">
+        <h2 class = 'name'>${song.name}</h2>
+        <h3 class = 'Type'>${song.Type}</h3>
+        <h3 class = 'color'>${song.price}</h3>
+      </div>`
       
-    </div>`
-    )
-  );
-}
-
-
-export{DOMSelectors}
-
-
- 
+      )
+    );
+  ;
+  }
 
     
+
+export{DOMSelectors}
 
 
